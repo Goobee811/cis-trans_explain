@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Permethrin 25:75 - Tỷ Lệ Đồng Phân Ưu Việt Được WHO Công Nhận</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #0056b3;
+        --secondary: #6c757d;
+        --success: #28a745;
+        --danger: #dc3545;
+        --warning: #ffc107;
+        --info: #17a2b8;
+        --light: #f8f9fa;
+        --dark: #343a40;
+        --accent: #00838f;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f5f7fa;
+      }
+
+      .header {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--accent) 100%
+        );
+        color: white;
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .section {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .section-title {
+        color: var(--primary);
+        border-bottom: 2px solid var(--primary);
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .advantage-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+        border-left: 4px solid var(--primary);
+      }
+
+      .advantage-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .advantage-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .comparison-table th {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .checkmark {
+        color: var(--success);
+        font-weight: bold;
+      }
+
+      .crossmark {
+        color: var(--danger);
+      }
+
+      .highlight-box {
+        background-color: #e8f4ff;
+        border-left: 4px solid var(--primary);
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 4px;
+      }
+
+      .rating-stars {
+        color: var(--warning);
+      }
+
+      .footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 2rem 0;
+        margin-top: 3rem;
+      }
+
+      .safety-meter {
+        height: 30px;
+        border-radius: 15px;
+        margin-bottom: 1rem;
+        position: relative;
+        background-color: #e9ecef;
+        overflow: hidden;
+      }
+
+      .safety-bar {
+        height: 100%;
+        border-radius: 15px;
+        background: linear-gradient(90deg, #28a745, #17a2b8);
+        transition: width 1s ease-in-out;
+      }
+
+      .isomer-ratio-visualization {
+        height: 50px;
+        border-radius: 25px;
+        margin: 1rem 0;
+        overflow: hidden;
+        border: 1px solid #dee2e6;
+      }
+
+      .isomer-cis {
+        height: 100%;
+        background-color: #ff9800;
+        float: left;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+        font-weight: bold;
+      }
+
+      .isomer-trans {
+        height: 100%;
+        background-color: #03a9f4;
+        float: left;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+        font-weight: bold;
+      }
+
+      .sticky-badge {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        background-color: var(--danger);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        transform: rotate(15deg);
+        font-weight: bold;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        background-color: var(--primary);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }
+
+      .timeline-container {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+      }
+
+      .timeline-container.left {
+        left: 0;
+      }
+
+      .timeline-container.right {
+        left: 50%;
+      }
+
+      .timeline-container::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -12px;
+        background-color: white;
+        border: 4px solid var(--primary);
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .timeline-container.left::after {
+        right: -12px;
+      }
+
+      .timeline-container.right::after {
+        left: -12px;
+      }
+
+      .timeline-content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      @media screen and (max-width: 768px) {
+        .timeline::after {
+          left: 31px;
+        }
+
+        .timeline-container {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .timeline-container.right {
+          left: 0%;
+        }
+
+        .timeline-container.left::after,
+        .timeline-container.right::after {
+          left: 15px;
+        }
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+      }
+
+      .btn-primary:hover {
+        background-color: #004494;
+        border-color: #004494;
+      }
+
+      .scroll-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background-color: var(--primary);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 999;
+      }
+
+      .scroll-top.visible {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Scroll to top button -->
+    <div class="scroll-top" id="scrollTop">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-7">
+            <h1 class="display-4 fw-bold">PERMETHRIN 25:75</h1>
+            <h2 class="mb-4">Tỷ Lệ Đồng Phân Ưu Việt Được WHO Công Nhận</h2>
+            <p class="lead">
+              Giải pháp hiệu quả và an toàn cho môi trường y tế và gia dụng
+            </p>
+          </div>
+          <div class="col-md-5 text-center">
+            <img
+              src="https://www.who.int/images/default-source/default-album/who-logo-rgb.jpg?sfvrsn=ac85a19b_2"
+              alt="WHO Logo"
+              class="img-fluid"
+              style="max-width: 200px"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <!-- Introduction Section -->
+      <section class="section">
+        <h2 class="section-title">Tại Sao Chọn Permethrin 25:75?</h2>
+        <div class="highlight-box">
+          <p class="lead fw-bold mb-0">
+            Permethrin 25:75 là tỷ lệ đồng phân duy nhất được WHO đánh giá và
+            khuyến cáo sử dụng trong môi trường y tế công cộng và gia dụng.
+          </p>
+        </div>
+        <p>
+          Permethrin là hoạt chất kiểm soát côn trùng pyrethroid không có tính
+          hệ thống, có tác động tiếp xúc và qua đường tiêu hóa với côn trùng,
+          đồng thời có một số tác dụng xua đuổi. Với tỷ lệ đồng phân cis:trans
+          25:75, permethrin mang lại hiệu quả diệt côn trùng cao cùng với độ an
+          toàn tối ưu cho người sử dụng.
+        </p>
+      </section>
+
+      <!-- Isomer Ratio Visualization -->
+      <section class="section">
+        <h2 class="section-title">Hiểu về Tỷ Lệ Đồng Phân</h2>
+        <p>
+          Permethrin tồn tại dưới nhiều tỷ lệ đồng phân cis:trans khác nhau. Tỷ
+          lệ này ảnh hưởng trực tiếp đến an toàn và hiệu quả của hoạt chất.
+        </p>
+
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <h5 class="text-center mb-3">Permethrin 25:75</h5>
+            <div class="isomer-ratio-visualization">
+              <div class="isomer-cis" style="width: 25%">25%</div>
+              <div class="isomer-trans" style="width: 75%">75%</div>
+            </div>
+            <div class="rating-stars text-center">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="text-center text-success fw-bold">Được WHO chứng nhận</p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="text-center mb-3">Permethrin 40:60</h5>
+            <div class="isomer-ratio-visualization">
+              <div class="isomer-cis" style="width: 40%">40%</div>
+              <div class="isomer-trans" style="width: 60%">60%</div>
+            </div>
+            <div class="rating-stars text-center">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <p class="text-center text-danger fw-bold">
+              Không được WHO đánh giá
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="text-center mb-3">Permethrin 50:50</h5>
+            <div class="isomer-ratio-visualization">
+              <div class="isomer-cis" style="width: 50%">50%</div>
+              <div class="isomer-trans" style="width: 50%">50%</div>
+            </div>
+            <div class="rating-stars text-center">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <p class="text-center text-danger fw-bold">
+              Không được WHO đánh giá
+            </p>
+          </div>
+        </div>
+
+        <div class="highlight-box mt-4">
+          <p class="mb-0">
+            <strong>Nguyên tắc quan trọng:</strong> Tỷ lệ đồng phân cis càng
+            thấp, mức độ an toàn cho con người càng cao, trong khi vẫn đảm bảo
+            hiệu quả diệt côn trùng.
+          </p>
+        </div>
+      </section>
+
+      <!-- Advantages Section -->
+      <section class="section">
+        <h2 class="section-title">Ưu Điểm Vượt Trội</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h4>Được WHO Công Nhận</h4>
+              <p>
+                Permethrin 25:75 là tỷ lệ đồng phân duy nhất được WHO đánh giá
+                và khuyến cáo sử dụng trong môi trường y tế công cộng và gia
+                dụng.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4>An Toàn Tối Ưu</h4>
+              <p>
+                Với tỷ lệ đồng phân cis thấp hơn (25%) so với 40:60 và 50:50,
+                permethrin 25:75 an toàn hơn cho người sử dụng mà vẫn đảm bảo
+                hiệu quả.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <h4>Hiệu Quả Được Chứng Minh</h4>
+              <p>
+                Hiệu quả diệt côn trùng mạnh mẽ đã được WHO kiểm chứng, với tác
+                động tiếp xúc, qua đường tiêu hóa, và khả năng xua đuổi.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-md-4">
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-flask"></i>
+              </div>
+              <h4>Dữ Liệu An Toàn Đầy Đủ</h4>
+              <p>
+                Đầy đủ dữ liệu về độc tính cấp tính, mãn tính và môi trường, với
+                LD₅₀ qua đường miệng và da > 2000 mg/kg thể trọng.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-sync-alt"></i>
+              </div>
+              <h4>Ổn Định và Bền Vững</h4>
+              <p>
+                Ổn định ở pH 4-7, chỉ thủy phân chậm ở pH 9, và ổn định ở nhiệt
+                độ cao, đảm bảo hiệu quả lâu dài.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="advantage-card">
+              <div class="advantage-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <h4>Ứng Dụng Đa Dạng</h4>
+              <p>
+                Có thể ứng dụng trong nhiều dạng chế phẩm khác nhau: EC, DP, WP,
+                UL, phù hợp cho nhiều mục đích sử dụng.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Safety Comparison Section -->
+      <section class="section">
+        <h2 class="section-title">So Sánh Mức Độ An Toàn</h2>
+        <p>
+          Mức độ an toàn của permethrin phụ thuộc vào tỷ lệ đồng phân cis:trans.
+          Tỷ lệ cis càng thấp, độ an toàn càng cao.
+        </p>
+
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <h5>Permethrin 25:75</h5>
+            <div class="safety-meter">
+              <div class="safety-bar" style="width: 95%"></div>
+            </div>
+            <p class="text-success fw-bold">Độ an toàn cao nhất (95%)</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Permethrin 40:60</h5>
+            <div class="safety-meter">
+              <div class="safety-bar" style="width: 70%"></div>
+            </div>
+            <p class="text-warning fw-bold">Độ an toàn trung bình (70%)</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Permethrin 50:50</h5>
+            <div class="safety-meter">
+              <div class="safety-bar" style="width: 50%"></div>
+            </div>
+            <p class="text-danger fw-bold">Độ an toàn thấp hơn (50%)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comparison Table Section -->
+      <section class="section">
+        <h2 class="section-title">Bảng So Sánh Chi Tiết</h2>
+        <div class="table-responsive">
+          <table class="table table-bordered comparison-table">
+            <thead>
+              <tr>
+                <th>Tiêu chí</th>
+                <th>Permethrin 25:75</th>
+                <th>Permethrin 40:60</th>
+                <th>Permethrin 50:50</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Chứng nhận WHO</td>
+                <td class="checkmark">
+                  <i class="fas fa-check-circle"></i> Được WHO đánh giá và chứng
+                  nhận
+                </td>
+                <td class="crossmark">
+                  <i class="fas fa-times-circle"></i> Không được WHO đánh giá
+                </td>
+                <td class="crossmark">
+                  <i class="fas fa-times-circle"></i> Không được WHO đánh giá
+                </td>
+              </tr>
+              <tr>
+                <td>Tỷ lệ đồng phân cis</td>
+                <td>25% (thấp hơn)</td>
+                <td>40% (cao hơn)</td>
+                <td>50% (cao nhất)</td>
+              </tr>
+              <tr>
+                <td>Độ an toàn</td>
+                <td>
+                  <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                </td>
+                <td>
+                  <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                  </div>
+                </td>
+                <td>
+                  <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <i class="far fa-star"></i>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Dữ liệu độc tính</td>
+                <td class="checkmark">
+                  <i class="fas fa-check-circle"></i> Đầy đủ, được WHO xác nhận
+                </td>
+                <td class="crossmark">
+                  <i class="fas fa-times-circle"></i> Không đầy đủ
+                </td>
+                <td class="crossmark">
+                  <i class="fas fa-times-circle"></i> Không đầy đủ
+                </td>
+              </tr>
+              <tr>
+                <td>Phê duyệt sử dụng</td>
+                <td class="checkmark">
+                  <i class="fas fa-check-circle"></i> Y tế công cộng và gia dụng
+                </td>
+                <td class="crossmark">
+                  <i class="fas fa-times-circle"></i> Không chứng nhận cho y tế
+                </td>
+                <td class="crossmark">
+                  <i class="fas fa-times-circle"></i> Không chứng nhận cho y tế
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- WHO Specifications Section -->
+      <section class="section">
+        <h2 class="section-title">Thông Số Kỹ Thuật Theo WHO</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Permethrin TC (Tài liệu kỹ thuật)</h5>
+              </div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    Hàm lượng permethrin tối thiểu
+                    <span class="badge bg-primary rounded-pill">920 g/kg</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    Tỷ lệ đồng phân cis:trans
+                    <span class="badge bg-primary rounded-pill"
+                      >22.5-27.5:77.5-72.5</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Permethrin EC (Dạng nhũ tương đậm đặc)</h5>
+              </div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    Dạng
+                    <span>Chất lỏng đồng nhất ổn định</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    Tỷ lệ đồng phân cis:trans
+                    <span class="badge bg-primary rounded-pill"
+                      >22.5-27.5:77.5-72.5</span
+                    >
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    Phạm vi pH
+                    <span class="badge bg-primary rounded-pill">3-6.5</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="highlight-box mt-3">
+          <p class="mb-0">
+            <strong>Lưu ý quan trọng:</strong> "WHO specifications do not
+            necessarily apply to nominally similar products of other
+            manufacturer(s), nor to those where the active ingredient is
+            produced by other routes of manufacture." - Trang 4, Tài liệu WHO
+          </p>
+          <p class="small mt-2 mb-0 fst-italic">
+            Các thông số kỹ thuật của WHO không nhất thiết áp dụng cho các sản
+            phẩm tương tự của các nhà sản xuất khác, đặc biệt là những sản phẩm
+            có tỷ lệ đồng phân khác với 25:75.
+          </p>
+        </div>
+      </section>
+
+      <!-- Applications Section -->
+      <section class="section">
+        <h2 class="section-title">Ứng Dụng Trong Y Tế Công Cộng và Gia Dụng</h2>
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <div class="card text-center h-100">
+              <div class="card-body">
+                <i class="fas fa-mosquito fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Phòng Chống Véc-tơ</h5>
+                <p class="card-text">
+                  Diệt muỗi, ruồi, gián, kiến và các véc-tơ truyền bệnh khác.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card text-center h-100">
+              <div class="card-body">
+                <i class="fas fa-bed fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Xử Lý Màn Chống Muỗi</h5>
+                <p class="card-text">
+                  Ngâm tẩm màn chống muỗi và các vật liệu để phòng chống sốt
+                  rét.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card text-center h-100">
+              <div class="card-body">
+                <i class="fas fa-home fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Diệt Côn Trùng Gia Dụng</h5>
+                <p class="card-text">
+                  Sử dụng trong các sản phẩm xịt, kem bôi, và dung dịch diệt côn
+                  trùng gia dụng.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card text-center h-100">
+              <div class="card-body">
+                <i class="fas fa-hospital fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Bảo Vệ Sức Khỏe Cộng Đồng</h5>
+                <p class="card-text">
+                  Sử dụng trong các chiến dịch y tế công cộng phòng chống dịch
+                  bệnh.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conclusion Section -->
+      <section class="section">
+        <h2 class="section-title">Kết Luận</h2>
+        <div class="highlight-box">
+          <p class="lead fw-bold">
+            Permethrin 25:75 là lựa chọn ưu việt nhất cho các sản phẩm diệt côn
+            trùng trong môi trường y tế và gia dụng.
+          </p>
+          <p>
+            Với tỷ lệ đồng phân cis thấp hơn so với permethrin 40:60 và 50:50,
+            permethrin 25:75 mang lại sự cân bằng tối ưu giữa hiệu quả diệt côn
+            trùng và độ an toàn cho người sử dụng. Đây là lý do WHO chỉ khuyến
+            cáo và đánh giá permethrin 25:75, không phải các tỷ lệ đồng phân
+            khác.
+          </p>
+        </div>
+        <div class="text-center mt-4">
+          <p class="fw-bold">
+            Khi lựa chọn sản phẩm diệt côn trùng, hãy ưu tiên các sản phẩm chứa
+            permethrin với tỷ lệ đồng phân cis:trans 25:75 đã được WHO chứng
+            nhận để đảm bảo hiệu quả và an toàn tối đa cho gia đình bạn.
+          </p>
+          <button class="btn btn-primary btn-lg mt-3">Tìm Hiểu Thêm</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <p>
+              Tài liệu này được biên soạn dựa trên "WHO SPECIFICATIONS AND
+              EVALUATIONS FOR PUBLIC HEALTH PESTICIDES - PERMETHRIN (25:75
+              cis:trans isomer ratio)" của Tổ chức Y tế Thế giới (WHO).
+            </p>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <img
+              src="https://www.who.int/images/default-source/default-album/who-logo-rgb.jpg?sfvrsn=ac85a19b_2"
+              alt="WHO Logo"
+              class="img-fluid"
+              style="max-width: 100px"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Scroll to top functionality
+      const scrollTopBtn = document.getElementById("scrollTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          scrollTopBtn.classList.add("visible");
+        } else {
+          scrollTopBtn.classList.remove("visible");
+        }
+      });
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Initialize tooltips
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+
+      // Animate safety bars on scroll
+      function animateSafetyBars() {
+        const safetyBars = document.querySelectorAll(".safety-bar");
+
+        safetyBars.forEach((bar) => {
+          const width = bar.style.width;
+          bar.style.width = "0%";
+
+          setTimeout(() => {
+            bar.style.width = width;
+          }, 300);
+        });
+      }
+
+      // Run animation when section is in view
+      const safetySection = document
+        .querySelector(".safety-meter")
+        .closest(".section");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateSafetyBars();
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+
+      observer.observe(safetySection);
+    </script>
+  </body>
+</html>
